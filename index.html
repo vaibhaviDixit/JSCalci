@@ -80,7 +80,7 @@
 
 		<div class="buttons">
 			<input type="button" value="C" onclick=" ans.value='' ; ">
-			<input id="b()" type="button" value="()" onclick="getval(value)">
+			<input id="b()" type="button" value="()" onclick="toggleBraces()">
 			<input id="b%" type="button" value="%" onclick="getval(value)">
 			<input id="back" type="button" onclick="back()" value="&#8592;">
 		</div>
@@ -163,9 +163,24 @@
 			var sub=str.substr(0,(str.length-1));
 			result.value=sub;
 		}
-		 
+		var openBrace=true;
+		
+		function toggleBraces(){
+
+		    var result=document.getElementById('ans');
+		    if(openBrace){
+		    	result.value+="(";
+		    	openBrace=false;
+		    }
+		    else{
+				result.value+=")";
+		    	openBrace=true;
+	    	}
+
+		    }
 
 
 	</script>
+		
 </body>
 </html>
