@@ -76,12 +76,13 @@
 	<div name="main">
 
 
-		<input id="ans" type="text" name="output">
+		<input id="ans" type="text" name="output" readonly>
 
 		<div class="buttons">
-			<input type="button" value="C" onclick=" ans.value='' ; " style="width: 80px;">
+			<input type="button" value="C" onclick=" ans.value='' ; ">
 			<input id="b()" type="button" value="()" onclick="getval(value)">
 			<input id="b%" type="button" value="%" onclick="getval(value)">
+			<input id="back" type="button" onclick="back()" value="&#8592;">
 		</div>
 
 		<div class="buttons">
@@ -151,6 +152,16 @@
 			var result=document.getElementById('ans');
 			result.value=" ";
 		
+		}
+		
+		//this function clear last input from text box 
+		function back()
+		{
+			var result=document.getElementById('ans');
+			var str=result.value;
+			//using substr method we can get substring from string
+			var sub=str.substr(0,(str.length-1));
+			result.value=sub;
 		}
 		 
 
